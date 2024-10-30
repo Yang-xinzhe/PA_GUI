@@ -1,0 +1,890 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>853</width>
+    <height>648</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QTableWidget" name="table_Main">
+   <property name="geometry">
+    <rect>
+     <x>287</x>
+     <y>90</y>
+     <width>256</width>
+     <height>192</height>
+    </rect>
+   </property>
+   <column>
+    <property name="text">
+     <string>温度上限</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>温度下限</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>补偿系数(mV)</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QTableWidget" name="table_Driver">
+   <property name="geometry">
+    <rect>
+     <x>24</x>
+     <y>90</y>
+     <width>256</width>
+     <height>192</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Sunken</enum>
+   </property>
+   <property name="lineWidth">
+    <number>1</number>
+   </property>
+   <property name="gridStyle">
+    <enum>Qt::CustomDashLine</enum>
+   </property>
+   <column>
+    <property name="text">
+     <string>温度上限</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>温度下限</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>补偿系数(mV)</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QPushButton" name="pushButton_addDriver">
+   <property name="geometry">
+    <rect>
+     <x>73</x>
+     <y>289</y>
+     <width>72</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>添加区间</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_delDriver">
+   <property name="geometry">
+    <rect>
+     <x>151</x>
+     <y>289</y>
+     <width>72</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>删除区间</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_Tempcomp">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>320</y>
+     <width>101</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>烧录温度补偿表</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_Driver">
+   <property name="geometry">
+    <rect>
+     <x>114</x>
+     <y>70</y>
+     <width>84</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>驱放温度补偿表</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_Main">
+   <property name="geometry">
+    <rect>
+     <x>373</x>
+     <y>69</y>
+     <width>84</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>主路温度补偿表</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_Peak">
+   <property name="geometry">
+    <rect>
+     <x>633</x>
+     <y>69</y>
+     <width>84</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>峰值温度补偿表</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_Hex">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>选择HEX文件</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_JLink">
+   <property name="geometry">
+    <rect>
+     <x>763</x>
+     <y>28</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>连接J-Link</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_JLinkStatus">
+   <property name="geometry">
+    <rect>
+     <x>660</x>
+     <y>20</y>
+     <width>96</width>
+     <height>39</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_FilePath">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>10</y>
+     <width>71</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>文件路径：</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_BurnHex">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>40</y>
+     <width>101</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>烧录HEX文件</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_addMain">
+   <property name="geometry">
+    <rect>
+     <x>333</x>
+     <y>289</y>
+     <width>72</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>添加区间</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_delMain">
+   <property name="geometry">
+    <rect>
+     <x>411</x>
+     <y>289</y>
+     <width>72</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>删除区间</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_delPeak">
+   <property name="geometry">
+    <rect>
+     <x>671</x>
+     <y>289</y>
+     <width>72</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>删除区间</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_addPeak">
+   <property name="geometry">
+    <rect>
+     <x>593</x>
+     <y>289</y>
+     <width>72</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>添加区间</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="table_Peak">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>90</y>
+     <width>256</width>
+     <height>192</height>
+    </rect>
+   </property>
+   <column>
+    <property name="text">
+     <string>温度上限</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>温度下限</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>补偿系数(mV)</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QLabel" name="label_Driver_Direct">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>400</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Driver栅压</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_Driver">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>400</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_SetDriver">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>400</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>设置栅压</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_DirectLable">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>370</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>直接设置栅压</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_ModeToggle">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>340</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>直设/温补模式切换</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_ModeStatus">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>340</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>当前：</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_SetMain">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>440</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>设置栅压</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_Main">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>440</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_Main_Direct">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>440</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Main栅压</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_SetPeak">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>480</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>设置栅压</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_Peak">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>480</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_Peak_Direct">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>480</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Peak栅压</string>
+   </property>
+  </widget>
+  <widget class="QLCDNumber" name="lcdNumber_Temp">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>380</y>
+     <width>141</width>
+     <height>61</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_Temperature">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>400</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>当前温度</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_SetDSA">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>450</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>设置增益</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_DSA">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>450</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>DSA增益</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_DSA">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>450</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_TorStatus">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>490</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>当前：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_Tor">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>490</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>前/反向</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_Torset">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>490</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>切换</string>
+   </property>
+  </widget>
+  <widget class="QListView" name="listView_Direct">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>370</y>
+     <width>281</width>
+     <height>161</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QListView" name="listView_Direct_2">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>370</y>
+     <width>281</width>
+     <height>191</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_TempCompInit">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>370</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>温补模式初始值</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_MainInit">
+   <property name="geometry">
+    <rect>
+     <x>760</x>
+     <y>480</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>设置栅压</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_SetTempInit">
+   <property name="geometry">
+    <rect>
+     <x>760</x>
+     <y>400</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>设置温度</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_DriverInit">
+   <property name="geometry">
+    <rect>
+     <x>660</x>
+     <y>440</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_TempInit">
+   <property name="geometry">
+    <rect>
+     <x>660</x>
+     <y>400</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_DriverInit">
+   <property name="geometry">
+    <rect>
+     <x>760</x>
+     <y>440</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>设置栅压</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_TempInit">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>400</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>初始温度</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_MainInit">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>480</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Main初始</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_DriverInit">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>440</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Driver初始</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_MainInit">
+   <property name="geometry">
+    <rect>
+     <x>660</x>
+     <y>480</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_PeakInit">
+   <property name="geometry">
+    <rect>
+     <x>760</x>
+     <y>520</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>设置栅压</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_PeakInit">
+   <property name="geometry">
+    <rect>
+     <x>660</x>
+     <y>520</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_PeakInit">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>520</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Peak初始</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>30</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_Serial">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>30</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>连接串口</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_VgsStatus">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>530</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>当前栅压值</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="line_DriverCurrent">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>570</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="line_MainCurrent">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>570</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="line_PeakCurrent">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>570</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_DriverCurrentStatus">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>610</y>
+     <width>81</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Driver栅压值</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_MainCuurentStatus">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>610</y>
+     <width>81</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Main栅压值</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_PeakCurrentStatus">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>610</y>
+     <width>81</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Peak栅压值</string>
+   </property>
+  </widget>
+  <zorder>listView_Direct</zorder>
+  <zorder>table_Main</zorder>
+  <zorder>table_Driver</zorder>
+  <zorder>pushButton_addDriver</zorder>
+  <zorder>pushButton_delDriver</zorder>
+  <zorder>pushButton_Tempcomp</zorder>
+  <zorder>label_Driver</zorder>
+  <zorder>label_Main</zorder>
+  <zorder>label_Peak</zorder>
+  <zorder>pushButton_Hex</zorder>
+  <zorder>pushButton_JLink</zorder>
+  <zorder>label_JLinkStatus</zorder>
+  <zorder>label_FilePath</zorder>
+  <zorder>pushButton_BurnHex</zorder>
+  <zorder>pushButton_addMain</zorder>
+  <zorder>pushButton_delMain</zorder>
+  <zorder>pushButton_delPeak</zorder>
+  <zorder>pushButton_addPeak</zorder>
+  <zorder>table_Peak</zorder>
+  <zorder>label_Driver_Direct</zorder>
+  <zorder>lineEdit_Driver</zorder>
+  <zorder>pushButton_SetDriver</zorder>
+  <zorder>label_DirectLable</zorder>
+  <zorder>pushButton_ModeToggle</zorder>
+  <zorder>label_ModeStatus</zorder>
+  <zorder>pushButton_SetMain</zorder>
+  <zorder>lineEdit_Main</zorder>
+  <zorder>label_Main_Direct</zorder>
+  <zorder>pushButton_SetPeak</zorder>
+  <zorder>lineEdit_Peak</zorder>
+  <zorder>label_Peak_Direct</zorder>
+  <zorder>lcdNumber_Temp</zorder>
+  <zorder>label_Temperature</zorder>
+  <zorder>pushButton_SetDSA</zorder>
+  <zorder>label_DSA</zorder>
+  <zorder>lineEdit_DSA</zorder>
+  <zorder>lineEdit_TorStatus</zorder>
+  <zorder>label_Tor</zorder>
+  <zorder>pushButton_Torset</zorder>
+  <zorder>listView_Direct_2</zorder>
+  <zorder>label_TempCompInit</zorder>
+  <zorder>pushButton_MainInit</zorder>
+  <zorder>pushButton_SetTempInit</zorder>
+  <zorder>lineEdit_DriverInit</zorder>
+  <zorder>lineEdit_TempInit</zorder>
+  <zorder>pushButton_DriverInit</zorder>
+  <zorder>label_TempInit</zorder>
+  <zorder>label_MainInit</zorder>
+  <zorder>label_DriverInit</zorder>
+  <zorder>lineEdit_MainInit</zorder>
+  <zorder>pushButton_PeakInit</zorder>
+  <zorder>lineEdit_PeakInit</zorder>
+  <zorder>label_PeakInit</zorder>
+  <zorder>comboBox</zorder>
+  <zorder>pushButton_Serial</zorder>
+  <zorder>label_VgsStatus</zorder>
+  <zorder>line_DriverCurrent</zorder>
+  <zorder>line_MainCurrent</zorder>
+  <zorder>line_PeakCurrent</zorder>
+  <zorder>label_DriverCurrentStatus</zorder>
+  <zorder>label_MainCuurentStatus</zorder>
+  <zorder>label_PeakCurrentStatus</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
