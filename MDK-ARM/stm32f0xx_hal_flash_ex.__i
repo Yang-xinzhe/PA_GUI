@@ -1,0 +1,13 @@
+failed - out of memory. </td><td>Ensure you have enough memory available.  </td></tr>
+<tr>
+<td>ERROR </td><td>FATAL-ERROR: Out of Memory </td><td>Ensure you have enough memory available.  </td></tr>
+<tr>
+<td>ERROR </td><td>ccmerge failed, d Error(s) found. </td><td>Check log file.  </td></tr>
+<tr>
+<td>WARNING </td><td>ccmerge command line warning: duplicate '-s' ignored </td><td>See usage and correct the argument.  </td></tr>
+<tr>
+<td>INFO </td><td>Note: '-merge' not specified, checking files only. </td><td>For information only.  </td></tr>
+<tr>
+<td>INFO </td><td>Note: no config annotations in pfile </td><td>For information only.  </td></tr>
+<tr>
+<td>INFO </td><td>Note: no config annotations in cfile </td><td>For information o
